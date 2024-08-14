@@ -114,6 +114,11 @@ a{
 .navbar .navbar-nav .nav-item .nav-link:hover::before{
     width: 100%;
 }
+@media (max-width:991px) {
+    .navbar .navbar-nav .nav-item .nav-link:hover::before{
+        width: 20%;
+    }
+}
 .main-btn{
     background-color: var(--yellow-color);
     padding: 8px 30px !important;
@@ -124,15 +129,33 @@ a{
 .main-btn:hover{
     background-color: var(--green-color);
 }
-.dropdown:hover,
-.dropdown:focus{
-    display: block;
-}
+
 .dropdown-menu .row{
     display: flex;
     align-items: center;
     justify-content: space-evenly !important;
 }
+.dropdown-menu .row .col-lg-6{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.dropdown-header{
+    color: var(--black-color) !important;
+    font-size: 15px;
+    font-weight: 500;
+}
+.dropdown-1 li{
+    padding-top: 10px !important;
+}
+.top-menu li{
+    padding-top: 10px;
+}
+.mega-menu li{
+    display: block;
+}
+
 @media (max-width:1200px) {
     .main-btn{
         margin-left: 5px;
@@ -151,21 +174,34 @@ a{
 
 @media (min-width:993px) {
     .dropdown-menu{
-        max-width: 500px !important;
+        max-width: 590px ;
+        max-height: 400px !important;
     }
+   /* .top-menu{
+    max-width: 400px ;
+   } */
 }
 
 @media (min-width:640px) {
     .mega-menu{
         width: 640px;
         transform: translate3d(-120px, 4px);
+        max-height: 200px;
+        
+    }  
+}
+@media (max-width:991px) {
+    .mega-menu .row{
+        width: 100%;
+        max-height: 200px;
+        overflow-y: scroll;
     }
-    
 }
 /* --------------nav end here------------------ */
 /* --------------banner start here------------------ */
 .carousel-item{
     background:#eee;
+    padding: 60px 0px;
 }
 .carousel-item .row{
     display: flex;
@@ -188,7 +224,7 @@ a{
     
 }
 .carousel-item .row .banner-text h1{
-    color: var(--yellow-color);
+    color: #000;
     font-size: 40px;
     font-weight: 700;
     font-family: var(--large-text-font);
@@ -200,8 +236,8 @@ a{
 
 
 .banner-img{
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     object-position: center;
 }
@@ -209,7 +245,13 @@ a{
     width: 100%;
     height: 100%;
 }
-
+.banner-img:hover{
+    transform: scale(1.2);
+    overflow: hidden;
+    transition: all .3s ease-out;
+    box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.557);
+    border-radius: 50%;
+}
 @media (max-width:992px) {
     .banner-img{
         display: flex;
@@ -312,10 +354,30 @@ a{
 .product-section{
     width: 100%;
 }
-.product-title h2{
+.title h2{
 font-size: 30px;
 font-weight: 700;
 font-family: var(--large-text-font);
+position: relative;
+}
+.title h2::before{
+    content: '';
+    width: 70px;
+    height: 5px;
+    background-color: var(--yellow-color);
+    left: 35%;
+    bottom: 15px;
+    /* bottom: 0px; */
+    position: absolute;
+}
+.title h2::after{
+    content: '';
+    width: 70px;
+    height: 5px;
+    background-color: var(--yellow-color);
+    right: 35%;
+    bottom: 15px;
+    position: absolute;
 }
 .product-section .card{
    margin-top: 10px;
@@ -699,31 +761,34 @@ font-family: var(--large-text-font);
     height: 50px;
 }
  /* footer section end here */
-
+ 
  /* ===================about us page start here=============== */
- .bread{
+ .about-banner{
     width: 100%;
-    background-color: #eee;
     height: 300px;
-    background: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.28)),url(./images/gradient-dark-blue-futuristic-digital-background.jpg);
-    background-position:center;
-    background-repeat:no-repeat ;
+    background:linear-gradient(#eeeeee22, #00000056),url('./images/allback.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    
  }
- .bread .row{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 150px;
- }
- .bread .row .breadcrumb-item{
-    font-size: 30px;
-    color: var(--off-white-color);
-    font-weight: 700;
+ .about-banner h2{
+    text-align: center;
+    padding-top: 100px;
+    color: var(--shnow-white-color);
+    font-size: 50px;
     font-family: var(--large-text-font);
  }
-
+ .about-banner .breadcrumb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .about-banner .breadcrumb .breadcrumb-item{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--shnow-white-color);
+ }
 
   /* ===================about us page end here=============== */
 
