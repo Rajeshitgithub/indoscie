@@ -353,6 +353,7 @@ a{
 /* ----------- product-section start here-------------- */
 .product-section{
     width: 100%;
+    background-color: #eee;
 }
 .title h2{
 font-size: 30px;
@@ -360,7 +361,7 @@ font-weight: 700;
 font-family: var(--large-text-font);
 position: relative;
 }
-.title h2::before{
+/* .title h2::before{
     content: '';
     width: 70px;
     height: 5px;
@@ -368,33 +369,37 @@ position: relative;
     left: 35%;
     bottom: 15px;
     /* bottom: 0px; */
-    position: absolute;
-}
-.title h2::after{
+    /* position: absolute; */
+*/
+/* .title h2::after{
     content: '';
     width: 70px;
     height: 5px;
     background-color: var(--yellow-color);
-    right: 35%;
+    right:0px;
     bottom: 15px;
     position: absolute;
-}
-.product-section .card{
-   margin-top: 10px;
+} */
+
+.product-section .product-card{
+   margin-top: 20px;
     border-radius: 8px;
+    padding-top: 20px;
+    border-radius: 7px;
 }
 
-.product-section .card:hover{
+.product-section .product-card:hover{
     background-color:var(--blue-color) ;
     box-shadow: 4px 2px 5px var(--yellow-color);
-    transition: 1s all;
+    transition: .5s all;
     color: var(--shnow-white-color);
     
 }
-.product-section .card:hover.img-title{
+.product-section .product-card:hover.img-title{
     color: var(--shnow-white-color);
 }
 .img-product{
+   
     width: 250px;
     height: 250px;
     margin: auto;
@@ -414,7 +419,8 @@ position: relative;
 .attachment{
     width: 100%;
     height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.607), rgba(0, 0, 0, 0.676)),url('/asset/images/background.jpg') no-repeat;
+    position:static;
+    background: linear-gradient(rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.542)),url('/asset/images/allback.jpg') no-repeat;
     background-size:cover;
     background-position: center;
     background-attachment: fixed;
@@ -720,7 +726,7 @@ position: relative;
 /* footer section start here */
 .footer{
     width: 100%;
-    background: var(--shnow-white-color);
+    background: #81818198;
 }
 .footer-text{
     color: var(--black-color);
@@ -791,6 +797,12 @@ position: relative;
  }
 
   /* ===================about us page end here=============== */
+
+/* ===================services page start here=============== */
+
+/* ===================services page end here=============== */
+
+
 
 
 /* ===================price  page start here=============== */
@@ -865,10 +877,74 @@ position: relative;
 }
 /* ===================career  page end here=============== */
 
+/* =======================product page start==================== */
+.product-banner{
+    width: 100%;
+    height: auto;
+    background:var(--black-color);
+    
+}
+.product-banner .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-banner-text h1{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--shnow-white-color);
+    ;
+    line-height: 40px;
+    font-family: var(--large-text-font);
+}
+.product-banner-text p{
+    font-size:1rem;
+    font-weight: 500;
+    font-family: var(--roboto-font-family);
+    color:#ffffff5d;
 
-  
+}
+.form-text{
+    width: 100%;
+    height: 100%;
+    margin: 40px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--shnow-white-color);
+}
+@media (max-width:768px) {
+    .form-text{
+        margin: auto;
+        
+    }
+    .product-banner-text{
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .product-banner-text h1{
+        font-size: 22px;
+    }
+   
+}
 
-
-
-
-
+.page-section .card,
+.benifits .card{
+    margin-top: 15px;
+}
+/* ----------seo services--------------- */
+.seo-services .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.seo-service-text h1{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--large-text-font);
+}
+.seo-img img{
+    border-radius: 5%;
+}
