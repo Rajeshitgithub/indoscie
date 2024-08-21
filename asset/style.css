@@ -25,6 +25,28 @@ a{
 }ul,ol{
     list-style: none;
 }
+/* ---------fixed icons---------- */
+.fixed-2 {
+    position: relative;
+}
+.fixed-inner-2 {
+    width: 40px;
+    background-color: transparent;
+    position: fixed;
+    top: 70%;
+    left: 10px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    
+}
+.fixed-inner-2 a{
+    margin-top: 10px;
+}
+
+
+/* ---------fixed icons---------- */
+
 .sticky{
     width: 100%;
     position: fixed;
@@ -55,6 +77,9 @@ a{
 .topHeader .icons a i{
     color: var(--shnow-white-color) !important;
 }
+.topHeader .icons a i:hover{
+    color: var(--pink-color) !important;
+}
 @media (max-width:767px) {
     .topHeader{
         display: none;
@@ -64,7 +89,6 @@ a{
 .navbar-toggler{
     box-shadow: none !important;
 }
-
 .navbar{
     width: 100%;
     background-color: var(--shnow-white-color);
@@ -79,8 +103,7 @@ a{
 }
 .navbar .navbar-brand img{
     width: 100%;
-    height: 100%;
-   
+    height: 100%;  
 }
 .navbar .navbar-nav .nav-item{
     margin-left: 15px;
@@ -94,6 +117,7 @@ a{
     font-family: var(--large-text-font);
     position: relative;
     transform: 3s ease-in-out;
+    text-transform: capitalize;
 }
 .navbar .navbar-nav .nav-item .nav-link:hover,
     .navbar .navbar-nav .nav-item .nav-link.active{
@@ -108,8 +132,6 @@ a{
     height: 4px;
     background-color: var(--black-color);
     transition: 1s ease-in-out;
-    
-
 }
 .navbar .navbar-nav .nav-item .nav-link:hover::before{
     width: 100%;
@@ -129,33 +151,62 @@ a{
 .main-btn:hover{
     background-color: var(--green-color);
 }
-
-.dropdown-menu .row{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly !important;
+/* -------dropdown--------- */
+.dropdown{
+    position: relative;
 }
-.dropdown-menu .row .col-lg-6{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
+.dropdown-menu {
+  position: absolute;
+  right:-400% !important;
 }
-.dropdown-header{
-    color: var(--black-color) !important;
-    font-size: 15px;
-    font-weight: 500;
-}
-.dropdown-1 li{
-    padding-top: 10px !important;
-}
-.top-menu li{
-    padding-top: 10px;
-}
-.mega-menu li{
-    display: block;
-}
-
+  .dropdown-menu{
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.568);
+      background-color: #eeeeee;
+  }
+  .dropdown-menu ul{
+      list-style: none;
+      padding: 0;
+  }
+  .dropdown-menu.show{
+      display: flex;
+      align-items: center;
+      justify-items: flex-start;
+  }
+  .dropdown-menu a:hover{
+    color: var(--black-color) ;
+    text-decoration: underline !important;
+  }
+  .dropdown:hover .dropdown-menu{
+      display: flex;
+  }
+  .dropdown-menu ul li:first-child a{
+      font-size: 20px;
+      font-weight: 500;
+      color: blue;
+      text-decoration: none !important; 
+  }
+  @media (min-width:993px){
+      .dropdown-menu.show{
+      display: flex;
+  }
+  .dropdown:hover .dropdown-menu{
+      display: flex;
+  }
+  }
+  @media (max-width:992px) {
+      .dropdown-menu.show{
+          display: block !important;
+          max-height: 70vh;
+          overflow-y: scroll;
+      }
+      .dropdown:hover .dropdown-menu{
+        display: block !important;
+        max-height: 50vh;
+          overflow-y: scroll;
+    }
+  }
 @media (max-width:1200px) {
     .main-btn{
         margin-left: 5px;
@@ -168,37 +219,14 @@ a{
         font-weight: 500;
         padding-left: 0px;
         font-family: var(--large-text-font);
-    }
-    
+    }   
 }
 
-@media (min-width:993px) {
-    .dropdown-menu{
-        max-width: 590px ;
-        max-height: 400px !important;
-    }
-   /* .top-menu{
-    max-width: 400px ;
-   } */
-}
-
-@media (min-width:640px) {
-    .mega-menu{
-        width: 640px;
-        transform: translate3d(-120px, 4px);
-        max-height: 200px;
-        
-    }  
-}
-@media (max-width:991px) {
-    .mega-menu .row{
-        width: 100%;
-        max-height: 200px;
-        overflow-y: scroll;
-    }
-}
 /* --------------nav end here------------------ */
 /* --------------banner start here------------------ */
+.banner-section{
+    position: relative;
+}
 .carousel-item{
     background:#eee;
     padding: 60px 0px;
@@ -248,9 +276,10 @@ a{
 .banner-img:hover{
     transform: scale(1.2);
     overflow: hidden;
-    transition: all .3s ease-out;
+    transition: all 1s ease-in-out;
     box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.557);
     border-radius: 50%;
+    margin-bottom: 50px;
 }
 @media (max-width:992px) {
     .banner-img{
@@ -260,6 +289,26 @@ a{
     }
     .banner-text{
         padding-bottom: 20px;
+    }
+}
+@media (max-width:567px) {
+    .banner-img{
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        padding-bottom: 30px;
+    }
+}
+@media (max-width:467px) {
+    .carousel-item .row .banner-text h1{
+        color: #000;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: var(--large-text-font);
+    
+    }
+    .main-btn{
+        display: block;
     }
 }
 
@@ -361,30 +410,13 @@ font-weight: 700;
 font-family: var(--large-text-font);
 position: relative;
 }
-/* .title h2::before{
-    content: '';
-    width: 70px;
-    height: 5px;
-    background-color: var(--yellow-color);
-    left: 35%;
-    bottom: 15px;
-    /* bottom: 0px; */
-    /* position: absolute; */
-*/
-/* .title h2::after{
-    content: '';
-    width: 70px;
-    height: 5px;
-    background-color: var(--yellow-color);
-    right:0px;
-    bottom: 15px;
-    position: absolute;
-} */
 
-.product-section .product-card{
-   margin-top: 20px;
+
+.product-section .product-card,
+.product-section .card{
+   margin-top: 25px;
     border-radius: 8px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     border-radius: 7px;
 }
 
@@ -434,11 +466,18 @@ position: relative;
     justify-content: center;
 }
 .any-text h3{
-    color: var(--shnow-white-color);
+    color: var(--off-white-color);
     padding-top: 100px;
-    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size: 20px;
     font-weight: 400;
 
+}
+@media (max-width:576px) {
+    .any-text h3{
+        padding-top: 40px;  
+    }
 }
 #attachment{
     margin-top: 10px;
@@ -458,12 +497,27 @@ position: relative;
 /* ----------- faq-section start here-------------- */
 .faq-section{
     width: 100%;
-    background-color:var(--shnow-white-color);
+    background-color:#eee;
+}
+.faq-section .title{
+    /* color: var(--shnow-white-color); */
+}
+.faq-section .title p{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--large-text-font);
 }
 
 .accordion .accordion-item{
-    background-color:var(--shnow-white-color) !important;
+    background-color:#eee !important;
     border: unset !important;
+}
+.accordion-button{
+    font-size: 15px !important;
+    font-weight: 700;
+    color: var(--black-color);
+    font-family: var(--large-text-font);
+    background-color: var(--blue-color) !important;
 }
 .accordion .accordion-item .accordion-button{
     background-color:var(--shnow-white-color) !important;
@@ -471,6 +525,9 @@ position: relative;
 .accordion .accordion-item .accordion-button:hover,
 .accordion .accordion-item .accordion-button:focus{
     box-shadow: unset !important;
+}
+.accordion .accordion-item{
+    margin: 10px 0px !important;
 }
 
 /* ----------- faq-section end here-------------- */
@@ -482,6 +539,9 @@ position: relative;
 }
 #submit-btn{
     padding: 3px 20px;
+}
+.form-control{
+    box-shadow: none !important;
 }
 /* ----------- contact end here-------------- */
 
@@ -766,6 +826,21 @@ position: relative;
     background-color: var(--blue-color);
     height: 50px;
 }
+.left-fixed{
+    position: relative;
+}
+.left1-fixed {
+    width: 40px;
+    background-color:var(--blue-color);
+    position: fixed;
+    top: 92%;
+    right: 10px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    
+}
+
  /* footer section end here */
  
  /* ===================about us page start here=============== */
@@ -785,6 +860,12 @@ position: relative;
     font-size: 50px;
     font-family: var(--large-text-font);
  }
+ @media (max-width:567px) {
+    .about-banner h2{
+        font-size: 30px !important;
+    }
+
+}
  .about-banner .breadcrumb{
     display: flex;
     align-items: center;
@@ -948,3 +1029,107 @@ position: relative;
 .seo-img img{
     border-radius: 5%;
 }
+/* ---------------prices page------------------ */
+/* Pricing header */
+/* .price{
+    margin: 0px;
+    padding: 0px;
+    border-top-left-radius: 55px !important;
+} */
+/* .price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+  } */
+  
+  /* List items */
+  /* .price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+  } */
+  
+  /* Grey list item */
+  /* .price .grey {
+    background-color: #eee;
+    font-size: 20px;
+  } */
+  
+  /* The "Sign Up" button */
+  /* .button {
+    background-color: var(--yellow-color);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  } */
+  .table-section{
+    background-color: #eee;
+  }
+  .table{
+    border: 2px solid var(--yellow-color);
+    border-radius: 12px !important;
+  }
+  .pre-card li{
+    padding-top: 10px !important;
+  }
+  .table-section .card{
+    margin-top: 20px !important;
+  }
+  .best-prices-card{
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border-bottom: 2px solid blue;
+  }
+  .best-prices-card:hover{
+    background-color: var(--blue-color);
+    color: var(--shnow-white-color);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.736);
+    transition: all .3s ease-in-out;
+  }
+  .prices-card-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .prices-card-top h5{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .best-prices-card .card-body ul li{
+    padding-top: 7px;
+  }
+  /*  contact-us page here*/
+  .contact-cards{
+    /* padding: 30px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+  }
+  @media (max-width:992px) {
+    .contact-cards{
+        width: 100%;
+        height: 100%;
+       
+    }
+  }
+  .contact-cards img{
+    margin-top: 20px;
+     width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .contact-cards h2{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--large-text-font);
+    padding-top: 20px;
+  }

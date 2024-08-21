@@ -175,6 +175,15 @@ function setActiveNavLink() {
 window.addEventListener('DOMContentLoaded', setActiveNavLink);
 
 //dropdown
+let dropdown = document.querySelectorAll('.dropdown');
+let addDrop = ()=>{
+    dropdown.classList.add('.dropdown-menu');
+    console.log("active class")
+
+}
+
+
+
 
 
 
