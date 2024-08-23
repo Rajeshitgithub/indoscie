@@ -43,7 +43,11 @@ a{
 .fixed-inner-2 a{
     margin-top: 10px;
 }
-
+@media (max-width:576px) {
+    .fixed-2{
+        display: none;
+    } 
+}
 
 /* ---------fixed icons---------- */
 
@@ -786,10 +790,21 @@ position: relative;
 /* footer section start here */
 .footer{
     width: 100%;
-    background: #81818198;
+    background: var(--black-color);
+}
+.footer .icons a i{
+    padding: 10px;
+    background-color: var(--shnow-white-color);
+    border-radius: 50%; 
+}
+.footer .icons a i:hover{
+color: var(--yellow-color);
+padding: 10px;
+background-color: var(--black-color);
+border-radius: 50%;
 }
 .footer-text{
-    color: var(--black-color);
+    color: var(--shnow-white-color);
 }
 .footer-text h3{
     color: var(--blue-color);
@@ -809,11 +824,14 @@ position: relative;
     font-family: var(--large-text-font);
     margin-bottom: 10px;
 }
+.footer-services p{
+    color: #fff;
+}
 .footer-services ul li{
     padding-top: 10px;
 }
 .footer-services ul li a{
-    color: var(--black-color);
+    color: var(--shnow-white-color);
 }
 
 .footer-services ul li a:hover{
@@ -1132,4 +1150,18 @@ position: relative;
     font-weight: 500;
     font-family: var(--large-text-font);
     padding-top: 20px;
+  }
+  /* -----------web design----------------- */
+  .card-img{
+    overflow: hidden;
+    
+  }
+  .card-img img:hover{
+    transform: scale(1.2);
+    transition: all 1s linear;
+
+  }
+
+  .text-col h2{
+    font-size: 26px;
   }
